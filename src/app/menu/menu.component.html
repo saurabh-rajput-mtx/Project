@@ -1,0 +1,118 @@
+<!-- <div *ngFor="let dish of dishes" (click)="onSelect(dish)">  -->
+<!-- <div class="card-top container-fluid">
+  <div class="container d-flex">
+    <div class="item">
+      <a (click)="AllDishes()">
+        <h6>All Dishes</h6>
+      </a>
+    </div>
+    <div class="item">
+      <a (click)="filter('Assamese')">
+        <h6>Drinks</h6>
+      </a>
+    </div>
+    <div class="item">
+      <a (click)="filter('Maithil')">
+        <h6>Maithil cuisine</h6>
+      </a>
+    </div>
+    <div class="item">
+      <a (click)="filter('Chinese')">
+        <h6>italian</h6>
+      </a>
+    </div>
+    <div class="item">
+      <a (click)="filter('Chinese')">
+        <h6>Chinese cuisine</h6>
+      </a>
+    </div>
+  </div> -->
+<!-- </div>
+details by router -->
+<!-- <div *ngIf='dishes'>
+  <div class="row">
+    <div class="column">
+      <div *ngFor="let dish of dishes" class="card" style="width: 18rem;">
+        <div [routerLink]="['/dishdetail',dish.id]">
+          <img class="card-img-top" src="{{dish.image}}" alt={{dish.name}} style="width:100%;height:22rem">
+          <div class="container">
+            <h2>{{dish.name}}</h2>
+            <p class="title">{{dish.featured}}</p> -->
+            <!-- <p>{{dish.description}}</p> -->
+            <!-- <p><b>Price </b> {{dish.price}}</p>
+            <p>category :{{dish.category}} </p>
+          </div>
+        </div>
+        <button class='btn btn-primary' (click)=addtocart(dish)> Add to cart</button>
+
+      </div>
+    </div>  -->
+    <!-- </div> -->
+  <!-- </div>-->
+  <!-- </div>
+</div> -->
+  <!-- <div [hidden]='dishes'>
+    <div class="loader">
+
+    </div>
+    <h4 style="text-align: center;">Loading . . . Please Wait</h4>
+  </div> -->
+
+
+
+
+  <!-- <app-dishdetail [dish]="selectedDish"></app-dishdetail> -->
+  <div class="all-page-title page-breadcrumb">
+		<div class="container text-center">
+			<div class="row">
+				<div class="col-lg-12">
+					<h1>Special Menu</h1>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Start Menu -->
+	<div class="menu-box">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="heading-title text-center">
+						<h2>Special Menu</h2>
+						<p>Lorem Ipsum is simply dummy text of the printing and typesetting</p>
+					</div>
+				</div>
+			</div>
+			
+			<div class="row inner-menu-box">
+				<div class="col-3">
+					<div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+						<a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" (click)="AllDishes()" role="tab" aria-controls="v-pills-home" aria-selected="true">All</a>
+						<a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" (click)="filter('Assamese')" role="tab" aria-controls="v-pills-profile" aria-selected="false">Drinks</a>
+						<a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" (click)="filter('Maithil')" role="tab" aria-controls="v-pills-messages" aria-selected="false">Lunch</a>
+						<a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" (click)="filter('Chinese')" role="tab" aria-controls="v-pills-settings" aria-selected="false">Dinner</a>
+					</div>
+				</div>
+				
+				<div class="col-9" *ngIf='dishes'>
+					<div class="tab-content" id="v-pills-tabContent">
+						<div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+							<div class="row">
+								<div class="col-lg-4 col-md-6 special-grid drinks" *ngFor="let dish of dishes" >
+									<div class="gallery-single fix" [routerLink]="['/dishdetail',dish.id]">
+										<img src="{{dish.image}}" alt={{dish.name}} class="img-fluid" >
+										<div class="why-text">
+											<h4>{{dish.name}}</h4>
+											<p>Sed id magna vitae eros sagittis euismod.</p>
+											<h5> {{dish.price}}</h5>
+                      <!-- <button class='btn btn-primary' (click)=addtocart(dish)> Add to cart</button> -->
+										</div>
+									</div>
+                  <!-- <button class='btn btn-primary' (click)=addtocart(dish)> Add to cart</button> -->
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>

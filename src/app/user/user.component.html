@@ -1,0 +1,99 @@
+<div style='height:7.2rem;width: 100%;'></div>
+<div style="background-color:blanchedalmond;height:100vh">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">User</a>
+            <button type="button" class="btn btn-primary" (click)="getAllData()">GetAllData</button>
+            <div><button type="butto" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)='updatebox()'>
+                    <!-- <img src="../assets/icon/add.jpg" alt=add> -->
+                    Add
+
+                </button></div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+
+
+    </nav>
+    <div>
+        <input type="text" [(ngModel)]='filter_id' placeholder="search Id">
+        <input type="text" [(ngModel)]='filter_name' placeholder="search Name">
+        <button type="button" (click)="filterdata()">filter</button>
+    </div>
+    <table class="table mt-4">
+        <thead>
+            <tr>
+                <th>Id No</th>
+                <th>Name </th>
+                <th>Email</th>
+                <th>Phone </th>
+                <th> Location</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor='let row of UserData'>
+                <td>{{row.id}}</td>
+                <td>{{row.name}}</td>
+                <td>{{row.email}}</td>
+                <td>{{row.phone}}</td>
+                <td>{{row.loaction}}</td>
+                <td><button style='background-color: aqua;border-radius: .5rem;' type="button" (click)='editData(row)'
+                        data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        Edit
+                        <!-- <img src="../assets/icon/add.jpg"> -->
+                    </button>
+                    <button (click)="deleteData(row)"
+                        style='background-color: red;margin-left:.5rem;border-radius: .5rem;'>
+                        Delete
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">User Display</h5>
+                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form [formGroup]="formValue">
+                        <div class="form-group mt-1">
+                            <label for="name">Name</label>
+                            <input type="Text" class="form-control" formControlName='name' id="name" placeholder="abc">
+                        </div>
+                        <div class="form-group mt-1">
+                            <label for="email">email</label>
+                            <input type="email" class="form-control" id="email" formControlName='email'
+                                placeholder="abc@gmail.com">
+                        </div>
+                        <div class="form-group mt-1">
+                            <label for="phone">phone</label>
+                            <input type="text" class="form-control" id="phone" formControlName='phone'
+                                placeholder="3324">
+                        </div>
+                        <div class="form-group mt-1">
+                            <label for="loaction"> Location</label>
+                            <input type="text" class="form-control" id="loaction" formControlName='loaction'
+                                placeholder="abc">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id='exit' class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" (click)="updateUserDetails()" class="btn btn-primary" data-bs-dismiss="modal" *ngIf="!boxhidding" >Update</button>
+                    <button type="button" (click)="postUserDetails()" class="btn btn-primary"
+                        style='background-color: green;' data-bs-dismiss="modal" *ngIf=boxhidding>Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

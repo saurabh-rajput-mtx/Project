@@ -1,0 +1,12 @@
+tr:hover {
+    background-color: black;
+    color:blanchedalmond
+  }
+  table{
+    width:80%;
+  margin-left:10%    
+  }
+thead{
+  background-color: black;
+  color:blanchedalmond
+}

@@ -1,0 +1,29 @@
+<div class='back-ground-div'>
+    <div class="box-postion">
+        <div class='text-postion'>
+            <h1  style='margin-top: 15%;'>Join Us</h1>
+            <h3
+            style='margin-top: 30%;'>Eating something delicious right now? Use</h3>
+            <div class=button-1><a [routerLink]="['/about']">About</a></div>
+            </div>
+        <div class='register-box' >
+            <h2>Register Here</h2>
+            <from novalidation [formGroup]="signUpForm" ngsubmit='onSubmit()'>
+                <div class='input-div'>
+                    <input type=email formControlName='email' placeholder="Email">
+
+                </div>
+                <div class='input-div'>
+                    <input type=text formControlName='name' placeholder="NAME">
+                </div>
+                <div class='input-div'>
+                    <input type=password formControlName='password' placeholder="*****">
+                </div>
+                <button type="button" (click)="onSubmit()">Register</button>
+                <a routerLink="/login"> already registered</a>
+
+            </from>
+        </div>
+
+    </div>
+</div>

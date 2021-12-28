@@ -1,0 +1,45 @@
+<div class="container">
+    <div class="card-table">
+        <div class="cart-product">
+            <table class="table table-responsive">
+                <thead>
+                    <tr>
+                        <th>Sr.No</th>
+                        <th>Dish Name</th>
+                        <th>Image</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of products; let i = index">
+                        <td>{{i+1}}</td>
+                        <td>{{item.name}}</td>
+                        <td><img style="width: 120px;" src="{{item.image}}" alt=""></td>
+                        <!-- <td style="width: 25%;">{{item.description}}</td> -->
+                        <th style="width: 12%;">{{item.price}}</th>
+                        <td style="width: 12%;">
+                            <button (click)="reduceQty(item)" class="btn btn-warning"><i
+                                    class="fas fa-trash-alt mr-3">-1</i></button><b>{{item.qty}}</b>
+                            <button (click)="addQty(item)" class="btn btn-success"><i
+                                    class="fas fa-trash-alt">+1</i></button>
+                        </td>
+
+                        <td>
+                            <button (click)="removeItem(item)" class="btn btn-danger"><i
+                                    class="fas fa-trash-alt">Delete</i></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="4"></td>
+                        <!-- <td><button (click)="emptycart()" class="btn btn-danger">Empty Cart</button></td> -->
+                        <td><button routerLink="/menu" class="btn btn-primary">Shop More</button></td>
+                        <td><button class="btn btn-success">Checkout</button></td>
+                        <td><strong>Grand Total : {{grandTotal}}</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

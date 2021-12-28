@@ -1,0 +1,32 @@
+<div style='height:8rem;width: 100%;'></div>
+<div class="container-fluid">
+  <section class="tm-mb-1 tm-row tm-services-row" id="services">
+    <div class="tm-section-2-l">
+      <article class="tm-bg-color-6 tm-box-pad tm-mb-1">
+        <h2 class="tm-mb-2">{{dish.name}}</h2>
+        <p>{{dish.description}}</p>
+        <p class="tm-mb-0">{{dish.label}}</p>
+      </article>
+      <div class="tm-bg-color-7 tm-em-box">
+        <p class="tm-text-color-2">Nam iaculis, urna ut laoreet aliquam, massa magna dapibus nibh, at pellentesque
+          lectus odio non risus. Nulla ac sodales est, vel iaculis. Text #333 . BG #DDD</p>
+        <button class='btn btn-secondary' (click)="goBack()">Back To Menu</button>
+      </div>
+    </div>
+    <div class="tm-section-2-r">
+      <div> <img src="{{dish.image}}" alt="Services image" class="tm-img-responsive">
+      </div>
+      <div class="pricing-option">
+        <div class="price">
+          <div class="front">
+            <span class="price"> &#8377; {{dish.price}} </span>
+          </div>
+          <div class="back">
+            <!-- <button class='btn btn-primary' (click)=addtocart(dish)> Add to cart</button> -->
+            <button class='btn btn-success' > Add to cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

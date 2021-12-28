@@ -1,0 +1,47 @@
+<div class=back-ground>
+<H3 style="text-align: center;">feedbackForm</H3>
+<!-- <H3>
+    {{feedbackForm.value|json}}
+    <-- {{feedbackForm.status}}
+</H3> -->
+<form novalidate [formGroup]="feedbackForm" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Firstname</label>
+        <input type="text" formControlName='firstname' class="form-control" id="exampleFormControlInput1"
+            placeholder="Firstname">
+        <!-- <div *ngIf="feedbackForm.get('firstname').hasError('required')">
+            Firstname required
+        </div> -->
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Lastname</label>
+        <input type="text" formControlName='lastname' class="form-control" id="exampleFormControlInput1"
+            placeholder="lastname">
+
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Tel No.</label>
+        <input type="number" formControlName='telnum' class="form-control" id="exampleFormControlInput1"
+            placeholder="Tel no.">
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">email</label>
+        <input type="email" formControlName='email' class="form-control" id="exampleFormControlInput1"
+            placeholder="abc@gmail.com">
+    </div>
+    <table style="width:100%">
+        <td><input type="checkbox" formControlName='agree'> May we contact you</td>
+        <td>
+            <select name="contacttype" formControlName='contacttype' placeholder="How">
+                <option *ngFor='let ctype of ContactType' [value]='ctype'>{{ctype}}</option>
+            </select>
+        </td>
+    </table>
+
+    <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">message</label>
+        <textarea class="form-control" formControlName=message id="exampleFormControlTextarea1" rows="3"></textarea>
+    </div>
+    <button type="submit" [disabled]="feedbackForm.invalid" class="background-primary text-floral-white">Submit</button>
+</form>
+</div>

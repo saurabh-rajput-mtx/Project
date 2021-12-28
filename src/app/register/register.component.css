@@ -1,0 +1,60 @@
+.back-ground-div{
+    width:100vw;
+    height:100vh;
+    background-image: linear-gradient(to right,#ff5722,#ff9800);
+    padding-top: 10%;
+    padding-left: 2%;
+}
+.box-postion{
+    width:90vw;
+    margin-top: 1%;
+
+    /* margin-top: 5rem; */
+    /* background-image: linear-gradient(to right,#ff5722,#ff9800); */
+    /* vertical-align: top; */
+
+}
+.register-box{
+    width:50%;
+    height:25rem; 
+    margin-left: 15%;
+    border-top-left-radius: 150px;
+    border-bottom-left-radius: 150px;
+    padding-left: 10%;
+    padding-top: 5%;
+background-color: aliceblue;
+display: inline-block;
+text-align: center;}
+input{
+    width: 80%;
+
+}
+.text-postion{
+    margin-left: 10%;
+    width:20%;
+    height:20rem; 
+    text-align: center;
+    /* margin-left: 5rem; */
+    color: aliceblue;
+    /* margin-top: -20rem; */
+    display: inline-block;
+    vertical-align:top;
+    margin-bottom: 1rem;
+} 
+.button-1{
+    /* margin-left: %; */
+    background-color: azure;
+    width: 30%;
+    margin-left: 35%;
+    border-radius: 20px;
+}
+a{
+    color: black;
+    text-decoration: none;
+    font-size: medium;
+}
+
+.input-div{
+    margin-top: 2%;
+    margin-bottom:3% ;
+}

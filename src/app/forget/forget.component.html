@@ -1,0 +1,35 @@
+<div id="exampleModalLong">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Forgot password</h5>
+            </div>
+            <div class="modal-body">
+                <form novalidate [formGroup]="loginForm" autocomplete="off" (ngSubmit)='forget()'>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Email address</label>
+                        <input type="email" class="form-control" formControlName="email" id="exampleInputEmail1"
+                            aria-describedby="emailHelp" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Token</label>
+                        <input type="password" formControlName="oldpassword" class="form-control"
+                            id="exampleInputPassword1">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputnewPassword1" class="form-label">New Password</label>
+                        <input type="password" formControlName="password" class="form-control"
+                            id="exampleInputnewPassword1">
+                    </div>
+                    <!-- <div class="mb-3 form-check">
+               <input type="checkbox" [(ngModel)]='user.remember' name=remember class="form-check-input"
+                id="exampleCheck1">
+              <label class="form-check-label" for="exampleCheck1">Check me out</label>
+            </div> -->
+                    <button type="button" (click)='gettoken()' class="btn btn-primary mt-3 ">get token</button>
+                    <div> <button type="submit"  class="btn btn-primary mt-3">updated password</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
